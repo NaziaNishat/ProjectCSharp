@@ -4,9 +4,9 @@ using System.Text;
 
 namespace AssignmentHatchery
 {
-    interface FishTank
+    
+    class FishTank
     {
-        void Feed();
-        void Grow();
+
     }
 }

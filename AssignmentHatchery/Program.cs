@@ -10,16 +10,15 @@ namespace AssignmentHatchery
             String str = Console.ReadLine();
             int numOfFish = Convert.ToInt32(str);
 
-            if(numOfFish > 0){
-                EventFire eventFire = new EventFire();
+            // if(numOfFish > 0){
                 MarketPlace marketPlace = new MarketPlace();
-                marketPlace.Subscribe();
-                eventFire.Start();
-
                 MarketPlaceInventory marketPlaceInventory = new MarketPlaceInventory();
-                marketPlaceInventory.inform();
-            }
 
+                marketPlace.SaleEvent += marketPlaceInventory.OnFishRequest;
+                marketPlace.onFishSale(numOfFish);
+            // }
+        
+        
         }
     }
 }

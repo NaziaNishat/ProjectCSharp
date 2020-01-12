@@ -4,51 +4,28 @@ using System.Text;
 
 namespace AssignmentHatchery
 {
-    class EventFire{
+    class MarketPlace{
 
-        public System.EventArgs e = null;
+        public delegate void SaleDelegate(Object o,SaleArgs saleArgs);
+        public event SaleDelegate SaleEvent;
 
-        public event  SalesEvent salesEvent;
-        public delegate void SalesEvent(EventFire eventFire,System.EventArgs e);
+        public void onFishSale(int numOfFish){
+            fishSaleHandler(numOfFish);
+        }
 
-        public event BuyRequestEvent buyRequestEvent;
-        public delegate void BuyRequestEvent(EventFire eventFire,System.EventArgs e);
-
-        public event TransferEvent transferEvent;
-        public delegate void TransferEvent(EventFire eventFire,System.EventArgs e);
-
-        public void Start(){
-            if(salesEvent != null){
-                salesEvent(this,e);
-            }
-
-            if(buyRequestEvent != null){
-                buyRequestEvent(this,e);
+        protected virtual void fishSaleHandler(int numOfFish){
+            if(SaleEvent != null){
+                SaleEvent(this,new SaleArgs(){numOfFish = numOfFish});
             }
         }
+
+
+
     }
 
-         public class MarketPlace
-        {
-            public void Subscribe()
-            {
-                EventFire ef  = new EventFire();
-                var eventFire = new Eve
-                ef += new EventFire.SalesEvent(SalesEventFired);
-                ef += new EventFire.BuyRequestEvent(BuyRequestEventFired);
-            }
-            public void SalesEventFired()
-            {
-                Program program = new Program();
-                
-                System.Console.WriteLine("Sales Event Fired");
-            }
+    public class SaleArgs : EventArgs{
+        public int numOfFish{get;set;}
+    }
 
-            public void BuyRequestEventFired()
-            {
-                System.Console.WriteLine("Buy Request Event Fired");
-            }
-
-        }
 
 }
