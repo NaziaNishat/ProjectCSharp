@@ -1,2 +1,0 @@
-# ProjectCSharp
-Practice Project

@@ -1,0 +1,3 @@
+C:\Users\nazia\Desktop\AssignmentHatchery\obj\Debug\netcoreapp3.1\AssignmentHatchery.csprojAssemblyReference.cache
+C:\Users\nazia\Desktop\AssignmentHatchery\obj\Debug\netcoreapp3.1\AssignmentHatchery.AssemblyInfoInputs.cache
+C:\Users\nazia\Desktop\AssignmentHatchery\obj\Debug\netcoreapp3.1\AssignmentHatchery.AssemblyInfo.cs

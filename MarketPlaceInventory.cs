@@ -9,7 +9,7 @@ namespace AssignmentHatchery
         public static int Rui = 50; 
         public void OnFishRequest(Object o,SaleArgs saleArgs){
             Rui -= saleArgs.numOfFish;
-            Console.WriteLine(Rui);
         }
+
     }
 }
