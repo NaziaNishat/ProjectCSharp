@@ -5,7 +5,9 @@ using System.Text;
 namespace AssignmentHatchery
 {   
     class HatcheryInventory
-    {   
+    {  
+        private static readonly object hatchLock = new object();  
+ 
         private static HatcheryInventory obj;
 
         private int HatcheryRui = 1000;
@@ -13,9 +15,11 @@ namespace AssignmentHatchery
         private HatcheryInventory(){}
 
         public static HatcheryInventory getInstance(){
+            lock(hatchLock){
             if(obj == null)
                 obj = new HatcheryInventory();
             return obj;
+            }
         }
 
 

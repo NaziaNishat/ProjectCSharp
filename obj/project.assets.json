@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nazia\\Desktop\\AssignmentHatchery\\AssignmentHatchery.csproj",
+      "projectUniqueName": "C:\\Users\\nazia\\Documents\\GitHub\\ProjectCSharp\\AssignmentHatchery.csproj",
       "projectName": "AssignmentHatchery",
-      "projectPath": "C:\\Users\\nazia\\Desktop\\AssignmentHatchery\\AssignmentHatchery.csproj",
+      "projectPath": "C:\\Users\\nazia\\Documents\\GitHub\\ProjectCSharp\\AssignmentHatchery.csproj",
       "packagesPath": "C:\\Users\\nazia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nazia\\Desktop\\AssignmentHatchery\\obj\\",
+      "outputPath": "C:\\Users\\nazia\\Documents\\GitHub\\ProjectCSharp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

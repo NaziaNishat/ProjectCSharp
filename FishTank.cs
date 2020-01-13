@@ -9,8 +9,8 @@ namespace AssignmentHatchery
     {   
         HatcheryInventory hatcheryInventory = HatcheryInventory.getInstance();
         public void checkFishMarket(){
-               if(hatcheryInventory.getSetHatcheryRui  < 1000) 
-               hatcheryInventory.getSetHatcheryRui = 900;
+               if(hatcheryInventory.getSetHatcheryRui  < 700) 
+               hatcheryInventory.getSetHatcheryRui = 1000;
             
         }
 

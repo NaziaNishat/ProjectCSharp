@@ -12,14 +12,14 @@ namespace AssignmentHatchery
 
             
             while(true){
-            System.Console.WriteLine("---------------------------");
+            System.Console.WriteLine("--------------------------------------------");
 
 
             Console.WriteLine("Enter number of fish you want:");
             String str = Console.ReadLine();
             int numOfFish = Convert.ToInt32(str);
 
-            if(numOfFish > 500)
+            if(numOfFish > 1200)
             System.Console.WriteLine("Sorry! We don't have that much fishes");
 
             else{
@@ -40,7 +40,7 @@ namespace AssignmentHatchery
                 FishTank fishTank = new FishTank();
                 fishTank.checkFishes();
 
-                System.Console.WriteLine("---------------------------");
+            System.Console.WriteLine("--------------------------------------------");
                 }
             }
                 

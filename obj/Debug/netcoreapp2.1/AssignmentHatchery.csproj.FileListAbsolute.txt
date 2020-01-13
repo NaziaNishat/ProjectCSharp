@@ -29,3 +29,13 @@ C:\Users\nazia\Desktop\AssignmentHatchery\obj\Debug\netcoreapp2.1\AssignmentHatc
 C:\Users\nazia\Desktop\AssignmentHatchery\obj\Debug\netcoreapp2.1\AssignmentHatchery.AssemblyInfo.cs
 C:\Users\nazia\Desktop\AssignmentHatchery\obj\Debug\netcoreapp2.1\AssignmentHatchery.dll
 C:\Users\nazia\Desktop\AssignmentHatchery\obj\Debug\netcoreapp2.1\AssignmentHatchery.pdb
+C:\Users\nazia\Documents\GitHub\ProjectCSharp\bin\Debug\netcoreapp2.1\AssignmentHatchery.deps.json
+C:\Users\nazia\Documents\GitHub\ProjectCSharp\bin\Debug\netcoreapp2.1\AssignmentHatchery.runtimeconfig.json
+C:\Users\nazia\Documents\GitHub\ProjectCSharp\bin\Debug\netcoreapp2.1\AssignmentHatchery.runtimeconfig.dev.json
+C:\Users\nazia\Documents\GitHub\ProjectCSharp\bin\Debug\netcoreapp2.1\AssignmentHatchery.dll
+C:\Users\nazia\Documents\GitHub\ProjectCSharp\bin\Debug\netcoreapp2.1\AssignmentHatchery.pdb
+C:\Users\nazia\Documents\GitHub\ProjectCSharp\obj\Debug\netcoreapp2.1\AssignmentHatchery.csprojAssemblyReference.cache
+C:\Users\nazia\Documents\GitHub\ProjectCSharp\obj\Debug\netcoreapp2.1\AssignmentHatchery.AssemblyInfoInputs.cache
+C:\Users\nazia\Documents\GitHub\ProjectCSharp\obj\Debug\netcoreapp2.1\AssignmentHatchery.AssemblyInfo.cs
+C:\Users\nazia\Documents\GitHub\ProjectCSharp\obj\Debug\netcoreapp2.1\AssignmentHatchery.dll
+C:\Users\nazia\Documents\GitHub\ProjectCSharp\obj\Debug\netcoreapp2.1\AssignmentHatchery.pdb
