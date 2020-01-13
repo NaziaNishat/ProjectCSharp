@@ -34,6 +34,10 @@ namespace AssignmentHatchery
                 MarketPlace marketPlace = new MarketPlace();
                 Hatchery hatchery = new Hatchery();
                 MarketPlaceInventory marketPlaceInventory = MarketPlaceInventory.getInstance();
+                HatcheryInventory hatcheryInventory = HatcheryInventory.getInstance();
+
+                marketPlaceInventory.generate();
+                hatcheryInventory.generateHatchery();
 
                 marketPlace.SaleEvent += marketPlaceInventory.OnFishRequest;
                 marketPlace.onFishSale(numOfFish);
@@ -60,7 +64,7 @@ namespace AssignmentHatchery
             FishTank fishTank = new FishTank();
 
             while(true){
-                System.Threading.Thread.Sleep(100);
+                System.Threading.Thread.Sleep(3000);
                 fishTank.checkFishMarket();
             }
         }

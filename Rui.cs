@@ -29,11 +29,13 @@ namespace AssignmentHatchery
             set{weight = value;}
         }
 
-        public void generateRui(){
-            for(int i=10;i<20;i++){
-                ruiList.Add(new Rui("Rui "+i,i));
-            }
-        }
+        // public List<Rui> generateRui(int numToGenerate){
+        //     for(int i=1;i<=numToGenerate;i++){
+        //         ruiList.Add(new Rui("Rui "+i,i));
+        //     }
+
+        //     return ruiList;
+        // }
 
         // public void check(){
         //     System.Console.WriteLine(ruiList[1].name);
