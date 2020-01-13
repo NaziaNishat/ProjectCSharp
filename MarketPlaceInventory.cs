@@ -7,6 +7,7 @@ namespace AssignmentHatchery
     class MarketPlaceInventory
     {   
         private static readonly object marketLock = new object();
+    
         private int Rui = 1200;
 
         private static MarketPlaceInventory obj;

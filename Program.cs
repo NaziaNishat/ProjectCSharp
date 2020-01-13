@@ -7,12 +7,18 @@ namespace AssignmentHatchery
     {   
         static void Main(string[] args)
         {   
+            // Rui rui = new Rui();
+            // rui.generateRui();
+            // rui.check();
+
+            //----------------------------------------------------------------------------
+            
             Thread thr = new Thread(new ThreadStart(checkFish));
             thr.Start();
 
             
             while(true){
-            System.Console.WriteLine("--------------------------------------------");
+            System.Console.WriteLine("****************************************************");
 
 
             Console.WriteLine("Enter number of fish you want:");
@@ -40,7 +46,7 @@ namespace AssignmentHatchery
                 FishTank fishTank = new FishTank();
                 fishTank.checkFishes();
 
-            System.Console.WriteLine("--------------------------------------------");
+            System.Console.WriteLine("****************************************************");
                 }
             }
                 
