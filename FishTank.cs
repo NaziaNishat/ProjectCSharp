@@ -7,15 +7,15 @@ namespace AssignmentHatchery
     
     class FishTank
     {   
-        HatcheryInventory hatcheryInventory = new HatcheryInventory();
+        HatcheryInventory hatcheryInventory = HatcheryInventory.getInstance();
         public void checkFishMarket(){
-               if(HatcheryInventory.HatcheryRui < 1000) 
-               HatcheryInventory.HatcheryRui = 900;
+               if(hatcheryInventory.getSetHatcheryRui  < 1000) 
+               hatcheryInventory.getSetHatcheryRui = 900;
             
         }
 
         public void checkFishes(){
-            System.Console.WriteLine("Fish in fishtank: {0}",HatcheryInventory.HatcheryRui);
+            System.Console.WriteLine("Fish in fishtank: {0}",hatcheryInventory.getSetHatcheryRui);
             
         } 
     }

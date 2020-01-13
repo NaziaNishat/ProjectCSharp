@@ -12,15 +12,22 @@ namespace AssignmentHatchery
 
             
             while(true){
+            System.Console.WriteLine("---------------------------");
+
 
             Console.WriteLine("Enter number of fish you want:");
             String str = Console.ReadLine();
             int numOfFish = Convert.ToInt32(str);
 
+            if(numOfFish > 500)
+            System.Console.WriteLine("Sorry! We don't have that much fishes");
+
+            else{
+
             // if(numOfFish > 0){
                 MarketPlace marketPlace = new MarketPlace();
                 Hatchery hatchery = new Hatchery();
-                MarketPlaceInventory marketPlaceInventory = new MarketPlaceInventory();
+                MarketPlaceInventory marketPlaceInventory = MarketPlaceInventory.getInstance();
 
                 marketPlace.SaleEvent += marketPlaceInventory.OnFishRequest;
                 marketPlace.onFishSale(numOfFish);
@@ -32,7 +39,10 @@ namespace AssignmentHatchery
 
                 FishTank fishTank = new FishTank();
                 fishTank.checkFishes();
+
+                System.Console.WriteLine("---------------------------");
                 }
+            }
                 
 
             // }

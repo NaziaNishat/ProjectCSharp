@@ -11,7 +11,7 @@ namespace AssignmentHatchery
         public event TransferDelegate TransferEvent;
 
         public void publish(int numOfFish){
-            HatcheryInventory hatcheryInventory = new HatcheryInventory();
+            HatcheryInventory hatcheryInventory = HatcheryInventory.getInstance();
             TransferEvent += hatcheryInventory.OnFetchFromHatchery;
             onFetch(numOfFish);
         }
