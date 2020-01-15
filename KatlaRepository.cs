@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace AssignmentHatchery
 {
-    class KatlaRepository : IntIKatlaRepo<Katla>
+    class KatlaRepository : IRepository<Katla>
     {   
         FishRepo fishRepo;
         public KatlaRepository(){

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace AssignmentHatchery
 {
-    class RuiRepository : IntRuiRepo<Rui>
+    class RuiRepository : IRepository<Rui>
     {   
         FishRepo fishRepo;
         public RuiRepository(){
@@ -19,7 +19,7 @@ namespace AssignmentHatchery
             
         }
 
-        IEnumerable<Rui> IntRuiRepo<Rui>.List => throw new NotImplementedException();
+        IEnumerable<Rui> IRepository<Rui>.List => throw new NotImplementedException();
 
         public void Add(Rui entity)
         {
