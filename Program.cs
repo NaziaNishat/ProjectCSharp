@@ -10,6 +10,11 @@ namespace AssignmentHatchery
 
         static void Main(string[] args)
         {
+            
+            KatlaRepository katlaRepository = new KatlaRepository();
+            RuiRepository ruiRepository = new RuiRepository();
+            IlishRepository ilishRepository = new IlishRepository();
+
             int numOfRuiFish, numOfKatlaFish,numOfIlishFish, marketFish = 1200;
 
             Thread thr = new Thread(new ThreadStart(checkFish));
@@ -21,14 +26,21 @@ namespace AssignmentHatchery
                 MarketPlaceInventory.marketKatlaList.Add(new Katla("Katla " + i, i));
                 MarketPlaceInventory.marketIlishList.Add(new Ilish("Ilish " + i, i));
 
-                HatcheryInventory.HatcheryRuiList.Add(new Rui("Rui " + i, i));
-                HatcheryInventory.HatcheryKatlaList.Add(new Katla("Katla " + i, i));
-                HatcheryInventory.HatcheryIlishList.Add(new Ilish("Ilish " + i, i));
-            }
+                ruiRepository.Add(new Rui("Rui " + i, i));
+                katlaRepository.Add(new Katla("Katla " + i, i));
+                ilishRepository.Add(new Ilish("Ilish " + i, i));
+                // katlaRepository.Add(new Ilish("Ilish " + i, i));
 
-            System.Console.WriteLine("marketKatlaCount:{0}", MarketPlaceInventory.marketKatlaList.Count);
-            System.Console.WriteLine("marketRuiCount:{0}", MarketPlaceInventory.marketRuiList.Count);
-            System.Console.WriteLine("marketIlishCount:{0}", MarketPlaceInventory.marketIlishList.Count);
+
+                // HatcheryInventory.HatcheryRuiList.Add(new Rui("Rui " + i, i));
+                // HatcheryInventory.HatcheryKatlaList.Add(new Katla("Katla " + i, i));
+                // HatcheryInventory.HatcheryIlishList.Add(new Ilish("Ilish " + i, i));
+            }
+            System.Console.WriteLine("aaaaaaaa:{0}",katlaRepository.Length());
+
+            // System.Console.WriteLine("marketKatlaCount:{0}", MarketPlaceInventory.marketKatlaList.Count);
+            // System.Console.WriteLine("marketRuiCount:{0}", MarketPlaceInventory.marketRuiList.Count);
+            // System.Console.WriteLine("marketIlishCount:{0}", MarketPlaceInventory.marketIlishList.Count);
 
 
             // for (int i = 0; i <= hatcheryFish; i++)

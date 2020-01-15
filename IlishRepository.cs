@@ -4,31 +4,48 @@ using System.Collections.Generic;
 
 namespace AssignmentHatchery
 {
-    class IlishRepository : IRepository<Fish>
-    {
-        public IEnumerable<Fish> List => throw new NotImplementedException();
+    class IlishRepository : IntIlishRepo<Ilish>
+    {   
+        FishRepo fishRepo;
+        public IlishRepository(){
+            fishRepo = FishRepo.getInstance();
+        }
+        public IEnumerable<Katla> List
+        {
+            get
+            {
+                return fishRepo.katlaList;
+            }
+            
+        }
 
-        public void Add(Fish entity)
+        IEnumerable<Ilish> IntIlishRepo<Ilish>.List => throw new NotImplementedException();
+
+        public void Add(Ilish entity)
+        {
+            fishRepo.ilishList.Add(entity);
+        }
+
+        public void Delete(int index)
+        {
+            fishRepo.ilishList.RemoveAt(index);
+        }
+
+        public Ilish FindByName(string name)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Fish entity)
+        public Ilish FindByWeight(string weight)
         {
             throw new NotImplementedException();
         }
 
-        public Fish FindByName(string name)
-        {
-            throw new NotImplementedException();
+        public int Length(){
+            return fishRepo.ilishList.Count;
         }
 
-        public Fish FindByWeight(string weight)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Fish entity)
+        public void Update(Ilish entity)
         {
             throw new NotImplementedException();
         }

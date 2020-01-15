@@ -4,47 +4,51 @@ using System.Collections.Generic;
 
 namespace AssignmentHatchery
 {
-    class KatlaRepository : IRepository<Fish>
+    class KatlaRepository : IntIKatlaRepo<Katla>
     {   
-        IEnumerable<Fish> IRepository<Fish>.List => throw new NotImplementedException();
-
-        Katla katla;
-
+        FishRepo fishRepo;
         public KatlaRepository(){
-            katla = new Katla();
+            fishRepo = FishRepo.getInstance();
         }
-
-        // public IEnumerable<Katla> List
-        // {
-        //     get
-        //     {
-
-        //     }
+        public IEnumerable<Katla> List
+        {
+            get
+            {
+                return fishRepo.katlaList;
+            }
             
-        // }
-
-        public void Add(Fish entity)
-        {
         }
 
-        public void Delete(Fish entity)
+        public int Length(){
+            return fishRepo.katlaList.Count;
+        }
+
+        public void Add(Katla entity)
+        {
+            fishRepo.katlaList.Add(entity);
+        }
+
+        public void Delete(int index)
+        {
+            fishRepo.katlaList.RemoveAt(index);
+        }
+
+        public void Update(Katla entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Katla FindByName(string name)
+        {
+            // var result = (from r in fishRepo.katlaList.Katla.name where r.name == name select r).FirstOrDefault();
+            // return result;
+            throw new NotImplementedException();        
+        }
+
+        public Katla FindByWeight(string weight)
         {
             throw new NotImplementedException();
         }
 
-        public Fish FindByName(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Fish FindByWeight(string weight)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Fish entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

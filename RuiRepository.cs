@@ -4,31 +4,48 @@ using System.Collections.Generic;
 
 namespace AssignmentHatchery
 {
-    class RuiRepository : IRepository<Fish>
-    {
-        public IEnumerable<Fish> List => throw new NotImplementedException();
+    class RuiRepository : IntRuiRepo<Rui>
+    {   
+        FishRepo fishRepo;
+        public RuiRepository(){
+            fishRepo = FishRepo.getInstance();
+        }
+        public IEnumerable<Rui> List
+        {
+            get
+            {
+                return fishRepo.ruiList;
+            }
+            
+        }
 
-        public void Add(Fish entity)
+        IEnumerable<Rui> IntRuiRepo<Rui>.List => throw new NotImplementedException();
+
+        public void Add(Rui entity)
+        {
+            fishRepo.ruiList.Add(entity);
+        }
+
+        public void Delete(int index)
+        {
+            fishRepo.ruiList.RemoveAt(index);
+        }
+
+        public int Length(){
+            return fishRepo.ruiList.Count;
+        }
+
+        public Rui FindByName(string name)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Fish entity)
+        public Rui FindByWeight(string weight)
         {
             throw new NotImplementedException();
         }
 
-        public Fish FindByName(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Fish FindByWeight(string weight)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Fish entity)
+        public void Update(Rui entity)
         {
             throw new NotImplementedException();
         }

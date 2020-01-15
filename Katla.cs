@@ -9,6 +9,8 @@ namespace AssignmentHatchery
         // public string name;
         // public int weight;
 
+        public List<Katla> katlaList = new List<Katla>();
+
         public Katla(){}
 
         public Katla(string ruiName,int ruiWeight){

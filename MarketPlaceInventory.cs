@@ -46,6 +46,8 @@ namespace AssignmentHatchery
                 marketRuiList.Add(new Rui("Rui " + i, i));
                 marketKatlaList.Add(new Katla("Katla " + i, i));
 
+                // katlaRepository.Add(new Katla("Katla " + i, i));
+
                 System.Console.WriteLine("generateMarket: {0}",marketRuiList.Count);
             }
 

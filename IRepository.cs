@@ -8,7 +8,7 @@ namespace AssignmentHatchery
     {   
         IEnumerable<T> List { get; }
         void Add(T entity);
-        void Delete(T entity);
+        void Delete(int index);
         void Update(T entity);
         T FindByName(String name);
         T FindByWeight(String weight);
