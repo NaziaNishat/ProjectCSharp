@@ -8,23 +8,28 @@ namespace AssignmentHatchery
     {
         public static List<Rui> HatcheryRuiList = new List<Rui>();
         public static List<Katla> HatcheryKatlaList = new List<Katla>();
+        public static List<Ilish> HatcheryIlishList = new List<Ilish>();
 
         private static readonly object hatchLock = new object();
 
         private static HatcheryInventory obj;
 
-        private int HatcheryRui, HatcheryKatla, HatcheryIlish = 1000;
+        private int HatcheryRui = 1000, HatcheryKatla = 1000, HatcheryIlish = 1000;
 
         private HatcheryInventory() { }
 
+
+
         public static HatcheryInventory getInstance()
         {
+
             lock (hatchLock)
             {
                 if (obj == null)
                     obj = new HatcheryInventory();
                 return obj;
             }
+
         }
 
         public void generateHatchery()
@@ -34,7 +39,7 @@ namespace AssignmentHatchery
                 HatcheryRuiList.Add(new Rui("Rui " + i, i));
                 HatcheryKatlaList.Add(new Katla("Katla " + i, i));
 
-                System.Console.WriteLine("generatehatchery: {0}",HatcheryRuiList.Count);
+                System.Console.WriteLine("generatehatchery: {0}", HatcheryRuiList.Count);
             }
 
         }
@@ -45,23 +50,57 @@ namespace AssignmentHatchery
             if (type == "RUI")
             {
                 HatcheryRui = HatcheryRui - saleArgs.numOfFish;
-                System.Console.WriteLine("MarketCount: {0}",HatcheryRuiList.Count);
+                System.Console.WriteLine("MarketCount: {0}", HatcheryRuiList.Count);
 
 
-                HatcheryRuiList.RemoveRange(HatcheryRui, HatcheryRuiList.Count-1 - HatcheryRui);
+                HatcheryRuiList.RemoveRange(HatcheryRui , HatcheryRuiList.Count - HatcheryRui);
 
                 Console.WriteLine("Available Hatchery Rui now: {0}", HatcheryRuiList.Count);
             }
             else if (type == "KATLA")
             {
+                // System.Console.WriteLine("first hHatcheryKatla: {0}", HatcheryKatla);
+
                 HatcheryKatla = HatcheryKatla - saleArgs.numOfFish;
-                System.Console.WriteLine("hHatcheryCount: {0}",HatcheryKatlaList.Count);
+                // System.Console.WriteLine("hHatcheryKatla: {0}", HatcheryKatla);
+                // System.Console.WriteLine("hHatcheryCount list: {0}", HatcheryKatlaList.Count);
 
                 HatcheryKatlaList.RemoveRange(HatcheryKatla, HatcheryKatlaList.Count - HatcheryKatla);
 
                 Console.WriteLine("Available Hatchery Katla now: {0}", HatcheryKatlaList.Count);
             }
+            else
+            {
+                // System.Console.WriteLine("first hHatcheryIlish: {0}", HatcheryIlish);
+
+                HatcheryIlish = HatcheryIlish - saleArgs.numOfFish;
+
+                // System.Console.WriteLine("hHatcheryIlish: {0}", HatcheryIlish);
+                // System.Console.WriteLine("hHatcheryIlishList: {0}", HatcheryIlishList.Count);
+
+                HatcheryIlishList.RemoveRange(HatcheryIlish, HatcheryIlishList.Count - HatcheryIlish);
+
+                Console.WriteLine("Available Hatchery Ilish now: {0}", HatcheryIlishList.Count);
+            }
         }
+
+        public List<Rui> getSetHatcheryRuiList
+        {
+            get { return HatcheryRuiList; }
+            set { HatcheryRuiList = value; }
+        }
+
+        public List<Katla> getSetHatcheryKatlaList
+        {
+            get { return HatcheryKatlaList; }
+            set { HatcheryKatlaList = value; }
+        }
+
+        // public List<Ilish> getSetHatcheryIlishList
+        // {
+        //     get { return HatcheryIlishList; }
+        //     set { HatcheryIlishList = value; }
+        // }
 
         public int getSetHatcheryRui
         {
@@ -76,7 +115,7 @@ namespace AssignmentHatchery
         }
         public int getSetHatcheryIlish
         {
-            get { return HatcheryRui; }
+            get { return HatcheryIlish; }
             set { HatcheryIlish = value; }
         }
 

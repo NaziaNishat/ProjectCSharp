@@ -71,6 +71,11 @@ namespace AssignmentHatchery
                 if (NumKatla <= 0)
                     NumKatla = HatcheryInventory.getSetHatcheryKatla;
                 System.Console.WriteLine("KATLA Fish in market inventory:{0}", NumKatla);
+            }else{
+                NumIlish -= saleArgs.numOfFish;
+                if (NumIlish <= 0)
+                    NumIlish = HatcheryInventory.getSetHatcheryIlish;
+                System.Console.WriteLine("Ilish Fish in market inventory:{0}", NumIlish);                
             }
 
         }

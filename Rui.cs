@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace AssignmentHatchery
 {
-    class Rui
+    class Rui : Fish
     {   
         List<Rui> ruiList = new List<Rui>();
-        public string name;
-        public int weight;
+        // public string name;
+        // public int weight;
 
         public Rui(){
 
@@ -19,15 +19,15 @@ namespace AssignmentHatchery
             weight = ruiWeight;
         }
 
-        public string Name{
-            get{return name;}
-            set{name = value;}
-        }
+        // public string Name{
+        //     get{return name;}
+        //     set{name = value;}
+        // }
 
-        public int Weight{
-            get{return weight;}
-            set{weight = value;}
-        }
+        // public int Weight{
+        //     get{return weight;}
+        //     set{weight = value;}
+        // }
 
         // public List<Rui> generateRui(int numToGenerate){
         //     for(int i=1;i<=numToGenerate;i++){

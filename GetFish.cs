@@ -46,9 +46,17 @@ namespace AssignmentHatchery
             hatchery.publish(numOfKatlaFish,fishType);
         }
 
-        public void BuyIlish()
+        public void BuyIlish(int numOfIlishFish)
         {
+            String fishType = "Ilish";
 
+            marketPlace.SaleEvent += marketPlaceInventory.OnFishRequest;
+            marketPlace.onFishSale(numOfIlishFish,fishType);
+
+
+            marketPlace.BuyRequestEvent += hatchery.OnBuyFishRequest;
+            marketPlace.onFishBuy(numOfIlishFish,fishType);
+            hatchery.publish(numOfIlishFish,fishType);
         }
     }
 }

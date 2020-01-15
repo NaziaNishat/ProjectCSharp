@@ -4,11 +4,10 @@ using System.Collections.Generic;
 
 namespace AssignmentHatchery
 {
-    class Ilish
+    class Ilish :Fish
     {   
-        List<Ilish> ruiList = new List<Ilish>();
-        public string name;
-        public int weight;
+        // public string name;
+        // public int weight;
 
         public Ilish(){
 
@@ -19,15 +18,15 @@ namespace AssignmentHatchery
             weight = ruiWeight;
         }
 
-        public string Name{
-            get{return name;}
-            set{name = value;}
-        }
+        // public string Name{
+        //     get{return name;}
+        //     set{name = value;}
+        // }
 
-        public int Weight{
-            get{return weight;}
-            set{weight = value;}
-        }
+        // public int Weight{
+        //     get{return weight;}
+        //     set{weight = value;}
+        // }
 
     }
 }

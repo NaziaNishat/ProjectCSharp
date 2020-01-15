@@ -10,49 +10,37 @@ namespace AssignmentHatchery
 
         static void Main(string[] args)
         {
-            int numOfRuiFish, numOfKatlaFish,marketFish = 1200,hatcheryFish = 1200;
+            int numOfRuiFish, numOfKatlaFish,numOfIlishFish, marketFish = 1200;
 
             Thread thr = new Thread(new ThreadStart(checkFish));
             thr.Start();
 
-            // GetFish getFish = new GetFish();
-            // getFish.fishGenerate();
+            for (int i = 0; i <= marketFish; i++)
+            {
+                MarketPlaceInventory.marketRuiList.Add(new Rui("Rui " + i, i));
+                MarketPlaceInventory.marketKatlaList.Add(new Katla("Katla " + i, i));
+                MarketPlaceInventory.marketIlishList.Add(new Ilish("Ilish " + i, i));
 
-                            for (int i = 0; i <= marketFish; i++)
-                {
-                    // MarketPlaceInventory.marketRuiList.Add(new Rui("Rui " + i, i));
-                    System.Console.WriteLine("aaaaaaaaaaaaaa:{0}",MarketPlaceInventory.marketKatlaList.Count);
-                    MarketPlaceInventory.marketKatlaList.Add(new Katla("Katla " + i, i));
+                HatcheryInventory.HatcheryRuiList.Add(new Rui("Rui " + i, i));
+                HatcheryInventory.HatcheryKatlaList.Add(new Katla("Katla " + i, i));
+                HatcheryInventory.HatcheryIlishList.Add(new Ilish("Ilish " + i, i));
+            }
 
-                }
+            System.Console.WriteLine("marketKatlaCount:{0}", MarketPlaceInventory.marketKatlaList.Count);
+            System.Console.WriteLine("marketRuiCount:{0}", MarketPlaceInventory.marketRuiList.Count);
+            System.Console.WriteLine("marketIlishCount:{0}", MarketPlaceInventory.marketIlishList.Count);
 
-                for (int i = 0; i <= hatcheryFish; i++)
-                {
-                    // HatcheryInventory.HatcheryRuiList.Add(new Rui("Rui " + i, i));
-                    HatcheryInventory.HatcheryKatlaList.Add(new Katla("Katla " + i, i));
 
-                }
+            // for (int i = 0; i <= hatcheryFish; i++)
+            // {
+            //     // HatcheryInventory.HatcheryRuiList.Add(new Rui("Rui " + i, i));
+            //     HatcheryInventory.HatcheryKatlaList.Add(new Katla("Katla " + i, i));
+
+            // }
 
             while (true)
             {
                 GetFish getFish = new GetFish();
-                // getFish.fishGenerate();
-
-                // MarketPlaceInventory marketPlaceInventory = MarketPlaceInventory.getInstance();
-                // marketPlaceInventory.generate();
-
-                // HatcheryInventory hatcheryInventory = HatcheryInventory.getInstance();
-                // hatcheryInventory.generateHatchery();
-
-
-                // System.Console.WriteLine("generatehatchery: {0}", HatcheryInventory.HatcheryRuiList.Count);
-
-                // System.Console.WriteLine("ccc: {0}", MarketPlaceInventory.marketRuiList.Count);
-
-                // for (int i = 1; i <= NumKatla; i++)
-                // {
-                //     marketKatlaList.Add(new Katla("Katla " + i, i));
-                // }
 
                 System.Console.WriteLine("****************************************************");
 
@@ -83,7 +71,11 @@ namespace AssignmentHatchery
                 }
                 else if (inputOption == 3)
                 {
+                    Console.WriteLine("Enter number of Ilish fish you want:");
+                    str = Console.ReadLine();
+                    numOfIlishFish = Convert.ToInt32(str);
 
+                    getFish.BuyIlish(numOfIlishFish);
                 }
                 else
                 {
@@ -97,11 +89,6 @@ namespace AssignmentHatchery
 
                 System.Console.WriteLine("****************************************************");
             }
-            // }
-
-
-            // }
-
 
         }
 

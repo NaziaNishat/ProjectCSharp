@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace AssignmentHatchery
 {
-    class Katla
+    class Katla : Fish
     {   
-        public string name;
-        public int weight;
+        // public string name;
+        // public int weight;
 
         public Katla(){}
 
@@ -16,15 +16,15 @@ namespace AssignmentHatchery
             weight = ruiWeight;
         }
 
-        public string Name{
-            get{return name;}
-            set{name = value;}
-        }
+        // public string Name{
+        //     get{return name;}
+        //     set{name = value;}
+        // }
 
-        public int Weight{
-            get{return weight;}
-            set{weight = value;}
-        }
+        // public int Weight{
+        //     get{return weight;}
+        //     set{weight = value;}
+        // }
 
 
     }
