@@ -7,9 +7,13 @@ namespace AssignmentHatchery
 {
     public interface IRepository
     {   
-        // IEnumerable<T> List { get; }
+        // IEnumerable<T> List{ get; }
 
         // IEnumerable<T> List();
+
+        List<T> getList<T>();
+
+        
         // IEnumerable<T> List(Expression<Func<T, bool>> predicate);
         void Add<T>(T entity);
         void Delete(int index,String type);

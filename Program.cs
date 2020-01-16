@@ -32,6 +32,9 @@ namespace AssignmentHatchery
                 repository.Add(new Katla("Katla " + i, i));
                 repository.Add(new Ilish("Ilish " + i, i));
 
+
+                System.Console.WriteLine("hlwwwwwww:{0}",repository.getList<Katla>().Count);
+
                 // ruiRepository.Add(new Rui("Rui " + i, i));
                 // katlaRepository.Add(new Katla("Katla " + i, i));
                 // ilishRepository.Add(new Ilish("Ilish " + i, i));

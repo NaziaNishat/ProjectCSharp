@@ -10,14 +10,13 @@ namespace AssignmentHatchery
         // public string name;
         // public int weight;
 
-        public Rui(){
-
-        }
+        public Rui(){}
 
         public Rui(string ruiName,int ruiWeight){
             name = ruiName;
             weight = ruiWeight;
         }
+
 
         // public string Name{
         //     get{return name;}

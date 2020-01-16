@@ -46,7 +46,7 @@ namespace AssignmentHatchery
                 // System.Console.WriteLine("MarketCount: {0}", HatcheryRuiList.Count);
 
                 // for (int i = HatcheryRui; i < ruiRepository.Length(); i++)
-                for (int i = HatcheryRui; i < 1000; i++)
+                for (int i = HatcheryRui; i < repository.getList<Rui>().Count; i++)
                 {
                     repository.Delete(i,type);
                 }
@@ -54,7 +54,7 @@ namespace AssignmentHatchery
 
                 // HatcheryRuiList.RemoveRange(HatcheryRui , HatcheryRuiList.Count - HatcheryRui);
 
-                Console.WriteLine("Available Hatchery Rui now: {0}", repository.LengthOfList(type));
+                Console.WriteLine("Available Hatchery Rui now: {0}", repository.getList<Rui>().Count);
             }
             else if (type == "KATLA")
             {
@@ -65,14 +65,14 @@ namespace AssignmentHatchery
                 // System.Console.WriteLine("hHatcheryCount list: {0}", HatcheryKatlaList.Count);
 
                 // for (int i = HatcheryKatla; i < katlaRepository.Length(); i++)
-                for (int i = HatcheryKatla; i < 1000; i++)
+                for (int i = HatcheryKatla; i < repository.getList<Katla>().Count; i++)
                 {
                     repository.Delete(i,type);
                 }
 
                 // HatcheryKatlaList.RemoveRange(HatcheryKatla, HatcheryKatlaList.Count - HatcheryKatla);
 
-                Console.WriteLine("Available Hatchery Katla now: {0}", repository.LengthOfList(type));
+                Console.WriteLine("Available Hatchery Katla now: {0}", repository.getList<Katla>().Count);
             }
             else
             {
@@ -81,7 +81,7 @@ namespace AssignmentHatchery
                 HatcheryIlish = HatcheryIlish - saleArgs.numOfFish;
 
                 // for (int i = HatcheryIlish; i < ilishRepository.Length(); i++)
-                for (int i = HatcheryIlish; i < 1000; i++)
+                for (int i = HatcheryIlish; i < repository.getList<Ilish>().Count; i++)
                 {
                     repository.Delete(i,type);
                 }
@@ -91,7 +91,7 @@ namespace AssignmentHatchery
 
                 // HatcheryIlishList.RemoveRange(HatcheryIlish, HatcheryIlishList.Count - HatcheryIlish);
 
-                Console.WriteLine("Available Hatchery Ilish now: {0}", repository.LengthOfList(type));
+                Console.WriteLine("Available Hatchery Ilish now: {0}", repository.getList<Ilish>().Count);
             }
         }
 
