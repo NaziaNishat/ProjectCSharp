@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace AssignmentHatchery
 {
@@ -19,14 +20,13 @@ namespace AssignmentHatchery
             
         }
 
-        IEnumerable<Rui> IRepository<Rui>.List => throw new NotImplementedException();
 
         public void Add(Rui entity)
         {
             fishRepo.ruiList.Add(entity);
         }
 
-        public void Delete(int index)
+        public void Delete(int index,String type)
         {
             fishRepo.ruiList.RemoveAt(index);
         }
@@ -46,6 +46,16 @@ namespace AssignmentHatchery
         }
 
         public void Update(Rui entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Rui> IRepository<Rui>.List()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Rui> IRepository<Rui>.List(Expression<Func<Rui, bool>> predicate)
         {
             throw new NotImplementedException();
         }

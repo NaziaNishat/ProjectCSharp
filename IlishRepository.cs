@@ -1,10 +1,11 @@
 using System;
 using System.Threading;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace AssignmentHatchery
 {
-    class IlishRepository : IntIlishRepo<Ilish>
+    class IlishRepository : IRepository<Ilish>
     {   
         FishRepo fishRepo;
         public IlishRepository(){
@@ -19,7 +20,6 @@ namespace AssignmentHatchery
             
         }
 
-        IEnumerable<Ilish> IntIlishRepo<Ilish>.List => throw new NotImplementedException();
 
         public void Add(Ilish entity)
         {
@@ -29,6 +29,11 @@ namespace AssignmentHatchery
         public void Delete(int index)
         {
             fishRepo.ilishList.RemoveAt(index);
+        }
+
+        public void Delete(int index, string type)
+        {
+            throw new NotImplementedException();
         }
 
         public Ilish FindByName(string name)
@@ -46,6 +51,16 @@ namespace AssignmentHatchery
         }
 
         public void Update(Ilish entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Ilish> IRepository<Ilish>.List()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Ilish> IRepository<Ilish>.List(Expression<Func<Ilish, bool>> predicate)
         {
             throw new NotImplementedException();
         }

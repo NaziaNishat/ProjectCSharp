@@ -9,7 +9,9 @@ namespace AssignmentHatchery
 
 
         static void Main(string[] args)
-        {
+        {   
+
+            Repository<Fish> repository = new Repository<Fish>();
             
             KatlaRepository katlaRepository = new KatlaRepository();
             RuiRepository ruiRepository = new RuiRepository();
@@ -26,7 +28,9 @@ namespace AssignmentHatchery
                 MarketPlaceInventory.marketKatlaList.Add(new Katla("Katla " + i, i));
                 MarketPlaceInventory.marketIlishList.Add(new Ilish("Ilish " + i, i));
 
-                ruiRepository.Add(new Rui("Rui " + i, i));
+                repository.Add(new Rui("Rui " + i, i));
+
+                // ruiRepository.Add(new Rui("Rui " + i, i));
                 katlaRepository.Add(new Katla("Katla " + i, i));
                 ilishRepository.Add(new Ilish("Ilish " + i, i));
                 // katlaRepository.Add(new Ilish("Ilish " + i, i));

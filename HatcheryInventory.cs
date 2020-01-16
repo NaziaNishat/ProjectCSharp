@@ -10,6 +10,8 @@ namespace AssignmentHatchery
         // public static List<Katla> HatcheryKatlaList = new List<Katla>();
         // public static List<Ilish> HatcheryIlishList = new List<Ilish>();
 
+        Repository<Fish> repository = new Repository<Fish>();
+
         public KatlaRepository katlaRepository = new KatlaRepository();
         public RuiRepository ruiRepository = new RuiRepository();
         public IlishRepository ilishRepository = new IlishRepository();
@@ -59,13 +61,13 @@ namespace AssignmentHatchery
 
                 for (int i = HatcheryRui; i < ruiRepository.Length(); i++)
                 {
-                    ruiRepository.Delete(i);
+                    repository.Delete(i,type);
                 }
 
 
                 // HatcheryRuiList.RemoveRange(HatcheryRui , HatcheryRuiList.Count - HatcheryRui);
 
-                Console.WriteLine("Available Hatchery Rui now: {0}", katlaRepository.Length());
+                Console.WriteLine("Available Hatchery Rui now: {0}", repository.LengthOfList(type));
             }
             else if (type == "KATLA")
             {
@@ -77,12 +79,12 @@ namespace AssignmentHatchery
 
                 for (int i = HatcheryKatla; i < katlaRepository.Length(); i++)
                 {
-                    katlaRepository.Delete(i);
+                    repository.Delete(i,type);
                 }
 
                 // HatcheryKatlaList.RemoveRange(HatcheryKatla, HatcheryKatlaList.Count - HatcheryKatla);
 
-                Console.WriteLine("Available Hatchery Katla now: {0}", katlaRepository.Length());
+                Console.WriteLine("Available Hatchery Katla now: {0}", repository.LengthOfList(type));
             }
             else
             {
@@ -92,7 +94,7 @@ namespace AssignmentHatchery
 
                 for (int i = HatcheryIlish; i < ilishRepository.Length(); i++)
                 {
-                    ilishRepository.Delete(i);
+                    repository.Delete(i,type);
                 }
 
                 // System.Console.WriteLine("hHatcheryIlish: {0}", HatcheryIlish);
@@ -100,7 +102,7 @@ namespace AssignmentHatchery
 
                 // HatcheryIlishList.RemoveRange(HatcheryIlish, HatcheryIlishList.Count - HatcheryIlish);
 
-                Console.WriteLine("Available Hatchery Ilish now: {0}", ilishRepository.Length());
+                Console.WriteLine("Available Hatchery Ilish now: {0}", repository.LengthOfList(type));
             }
         }
 

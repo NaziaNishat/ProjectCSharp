@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace AssignmentHatchery
 {
@@ -28,7 +29,7 @@ namespace AssignmentHatchery
             fishRepo.katlaList.Add(entity);
         }
 
-        public void Delete(int index)
+        public void Delete(int index,String type)
         {
             fishRepo.katlaList.RemoveAt(index);
         }
@@ -50,5 +51,14 @@ namespace AssignmentHatchery
             throw new NotImplementedException();
         }
 
+        IEnumerable<Katla> IRepository<Katla>.List()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Katla> IRepository<Katla>.List(Expression<Func<Katla, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
