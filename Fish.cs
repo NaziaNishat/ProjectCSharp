@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace AssignmentHatchery
 {
-    public class Fish
+    public abstract class Fish
     {   
         public string name;
         public int weight;

@@ -5,21 +5,15 @@ using System.Linq.Expressions;
 
 namespace AssignmentHatchery
 {
-    public class Repository<T> : IRepository<T> where T : Fish
+    public class Repository : IRepository
     {
         FishRepo fishRepo;
-
         public Repository()
         {
             fishRepo = FishRepo.getInstance();
         }
-
-        public IEnumerable<T> List => throw new NotImplementedException();
-
-        public void Add(T entity)
+        public void Add<T>(T entity)
         {
-            //    if (typeof(T) == typeof(CarWheel))
-
             if (entity is Rui rui)
             {
                 fishRepo.ruiList.Add((Rui)(object)entity);
@@ -33,10 +27,9 @@ namespace AssignmentHatchery
             {
                 fishRepo.ilishList.Add((Ilish)(object)entity);
             }
-
         }
 
-        public void Delete(int index, String type)
+        public void Delete(int index, string type)
         {
             if (type == "RUI")
             {
@@ -51,48 +44,20 @@ namespace AssignmentHatchery
             {
                 fishRepo.ilishList.RemoveAt(index);
             }
+
         }
 
-        public int LengthOfList(String type)
-        {
-            if (type == "RUI")
-            {
-                return fishRepo.ruiList.Count;
-
-            }
-            else if (type == "KATLA")
-            {
-                return fishRepo.katlaList.Count;
-
-            }
-            else
-            {
-                return fishRepo.ilishList.Count;
-
-            }
-        }
-
-        public T FindByName(string name)
+        public T FindByName<T>(string name)
         {
             throw new NotImplementedException();
         }
 
-        public T FindByWeight(string weight)
+        public T FindByWeight<T>(string weight)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerable<T> IRepository<T>.List()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerable<T> IRepository<T>.List(Expression<Func<T, bool>> predicate)
+        public void Update<T>(T entity)
         {
             throw new NotImplementedException();
         }

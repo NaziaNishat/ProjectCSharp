@@ -10,11 +10,11 @@ namespace AssignmentHatchery
         // public static List<Katla> HatcheryKatlaList = new List<Katla>();
         // public static List<Ilish> HatcheryIlishList = new List<Ilish>();
 
-        Repository<Fish> repository = new Repository<Fish>();
+        Repository repository = new Repository();
 
-        public KatlaRepository katlaRepository = new KatlaRepository();
-        public RuiRepository ruiRepository = new RuiRepository();
-        public IlishRepository ilishRepository = new IlishRepository();
+        // public KatlaRepository katlaRepository = new KatlaRepository();
+        // public RuiRepository ruiRepository = new RuiRepository();
+        // public IlishRepository ilishRepository = new IlishRepository();
 
         private static readonly object hatchLock = new object();
 
@@ -38,20 +38,6 @@ namespace AssignmentHatchery
 
         }
 
-        public void generateHatchery()
-        {
-            for (int i = 0; i <= HatcheryRui; i++)
-            {
-                // HatcheryRuiList.Add(new Rui("Rui " + i, i));
-                // HatcheryKatlaList.Add(new Katla("Katla " + i, i));
-                katlaRepository.Add(new Katla("Katla " + i, i));
-
-                System.Console.WriteLine("generatehatchery: {0}", katlaRepository.Length());
-            }
-
-        }
-
-
         public void OnFetchFromHatchery(Object o, SaleArgs saleArgs, String type)
         {
             if (type == "RUI")
@@ -59,7 +45,8 @@ namespace AssignmentHatchery
                 HatcheryRui = HatcheryRui - saleArgs.numOfFish;
                 // System.Console.WriteLine("MarketCount: {0}", HatcheryRuiList.Count);
 
-                for (int i = HatcheryRui; i < ruiRepository.Length(); i++)
+                // for (int i = HatcheryRui; i < ruiRepository.Length(); i++)
+                for (int i = HatcheryRui; i < 1000; i++)
                 {
                     repository.Delete(i,type);
                 }
@@ -77,7 +64,8 @@ namespace AssignmentHatchery
                 // System.Console.WriteLine("hHatcheryKatla: {0}", HatcheryKatla);
                 // System.Console.WriteLine("hHatcheryCount list: {0}", HatcheryKatlaList.Count);
 
-                for (int i = HatcheryKatla; i < katlaRepository.Length(); i++)
+                // for (int i = HatcheryKatla; i < katlaRepository.Length(); i++)
+                for (int i = HatcheryKatla; i < 1000; i++)
                 {
                     repository.Delete(i,type);
                 }
@@ -92,7 +80,8 @@ namespace AssignmentHatchery
 
                 HatcheryIlish = HatcheryIlish - saleArgs.numOfFish;
 
-                for (int i = HatcheryIlish; i < ilishRepository.Length(); i++)
+                // for (int i = HatcheryIlish; i < ilishRepository.Length(); i++)
+                for (int i = HatcheryIlish; i < 1000; i++)
                 {
                     repository.Delete(i,type);
                 }
