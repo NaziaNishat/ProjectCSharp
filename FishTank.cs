@@ -13,7 +13,6 @@ namespace AssignmentHatchery
                if(hatcheryInventory.getSetHatcheryRui  < 700) 
                {
                    hatcheryInventory.getSetHatcheryRui = 1000;
-                //    System.Console.WriteLine("hlwwwwwwwwwwwwwww");
                    fishDecrease = true;
                }
                else fishDecrease = false;

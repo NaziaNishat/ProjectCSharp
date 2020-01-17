@@ -41,7 +41,7 @@ namespace AssignmentHatchery
             {
                 fishRepo.katlaList.RemoveAt(index);
             }
-            else if(type == "ILISH")
+            else if (type == "ILISH")
             {
                 fishRepo.ilishList.RemoveAt(index);
             }
@@ -65,19 +65,19 @@ namespace AssignmentHatchery
 
             if (typeof(T).Equals(typeof(Rui)))
             {
-            fishList = fishRepo.ruiList.Cast<T>().ToList();
+                fishList = fishRepo.ruiList.Cast<T>().ToList();
             }
 
             else if (typeof(T).Equals(typeof(Katla)))
             {
-            fishList = fishRepo.katlaList.Cast<T>().ToList();
+                fishList = fishRepo.katlaList.Cast<T>().ToList();
             }
             else
             {
-            fishList = fishRepo.ilishList.Cast<T>().ToList();
-            } 
+                fishList = fishRepo.ilishList.Cast<T>().ToList();
+            }
 
-            return fishList; 
+            return fishList;
         }
 
         public void Update<T>(T entity)

@@ -43,7 +43,6 @@ namespace AssignmentHatchery
             if (type == "RUI")
             {
                 HatcheryRui = HatcheryRui - saleArgs.numOfFish;
-                // System.Console.WriteLine("MarketCount: {0}", HatcheryRuiList.Count);
 
                 // for (int i = HatcheryRui; i < ruiRepository.Length(); i++)
                 for (int i = HatcheryRui; i < repository.getList<Rui>().Count; i++)
@@ -76,8 +75,6 @@ namespace AssignmentHatchery
             }
             else
             {
-                // System.Console.WriteLine("first hHatcheryIlish: {0}", HatcheryIlish);
-
                 HatcheryIlish = HatcheryIlish - saleArgs.numOfFish;
 
                 // for (int i = HatcheryIlish; i < ilishRepository.Length(); i++)
@@ -86,32 +83,13 @@ namespace AssignmentHatchery
                     repository.Delete(i,type);
                 }
 
-                // System.Console.WriteLine("hHatcheryIlish: {0}", HatcheryIlish);
-                // System.Console.WriteLine("hHatcheryIlishList: {0}", HatcheryIlishList.Count);
-
                 // HatcheryIlishList.RemoveRange(HatcheryIlish, HatcheryIlishList.Count - HatcheryIlish);
 
                 Console.WriteLine("Available Hatchery Ilish now: {0}", repository.getList<Ilish>().Count);
             }
         }
 
-        // public List<Rui> getSetHatcheryRuiList
-        // {
-        //     get { return HatcheryRuiList; }
-        //     set { HatcheryRuiList = value; }
-        // }
 
-        // public List<Katla> getSetHatcheryKatlaList
-        // {
-        //     get { return HatcheryKatlaList; }
-        //     set { HatcheryKatlaList = value; }
-        // }
-
-        // public List<Ilish> getSetHatcheryIlishList
-        // {
-        //     get { return HatcheryIlishList; }
-        //     set { HatcheryIlishList = value; }
-        // }
 
         public int getSetHatcheryRui
         {

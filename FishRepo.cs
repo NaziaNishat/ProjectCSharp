@@ -4,16 +4,20 @@ using System.Collections.Generic;
 
 namespace AssignmentHatchery
 {
-    class FishRepo{
+    class FishRepo
+    {
 
         private static FishRepo obj;
 
-        private FishRepo(){
+        private FishRepo()
+        {
 
         }
 
-        public static FishRepo getInstance(){
-            if(obj == null){
+        public static FishRepo getInstance()
+        {
+            if (obj == null)
+            {
                 obj = new FishRepo();
             }
             return obj;

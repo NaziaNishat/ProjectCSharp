@@ -29,32 +29,6 @@ namespace AssignmentHatchery
             }
         }
 
-        public void generate(int number)
-        {
-            for (int i = 1; i <= number; i++)
-            {
-                marketRuiList.Add(new Rui("Rui " + i, i));
-            }
-            // System.Console.WriteLine("hhhhhhhhh : {0}",marketRuiList.Count);
-
-        }
-
-        public void generate()
-        {
-            for (int i = 1; i <= NumRui; i++)
-            {
-                marketRuiList.Add(new Rui("Rui " + i, i));
-                marketKatlaList.Add(new Katla("Katla " + i, i));
-
-                // katlaRepository.Add(new Katla("Katla " + i, i));
-
-                System.Console.WriteLine("generateMarket: {0}",marketRuiList.Count);
-            }
-
-            // for(int i=1;i<=NumIlish;i++){
-            //     marketIlishList.Add(new Ilish("Ilish "+i,i));
-            // }            
-        }
 
         public void OnFishRequest(Object o, SaleArgs saleArgs, String type)
         {
@@ -73,11 +47,13 @@ namespace AssignmentHatchery
                 if (NumKatla <= 0)
                     NumKatla = HatcheryInventory.getSetHatcheryKatla;
                 System.Console.WriteLine("KATLA Fish in market inventory:{0}", NumKatla);
-            }else{
+            }
+            else
+            {
                 NumIlish -= saleArgs.numOfFish;
                 if (NumIlish <= 0)
                     NumIlish = HatcheryInventory.getSetHatcheryIlish;
-                System.Console.WriteLine("Ilish Fish in market inventory:{0}", NumIlish);                
+                System.Console.WriteLine("Ilish Fish in market inventory:{0}", NumIlish);
             }
 
         }
